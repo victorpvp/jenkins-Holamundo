@@ -1,4 +1,2 @@
-FROM httpd
-EXPOSE 80
-ADD target/index.html /usr/local/apache2/htdocs/
-CMD ["/usr/sbin/apache2ctl", "-D", "FOREGROUND"]
+FROM httpd:2.4
+COPY ./public-html/ /usr/local/apache2/htdocs/
